@@ -1,6 +1,6 @@
 # enzyme-intl
 
-[![NPM Version](https://img.shields.io/npm/v/gemfile-parser.svg?style=for-the-badge&logo=npm)](https://www.npmjs.org/package/gemfile-parser)
+[![NPM Version](https://img.shields.io/npm/v/gemfile-parser.svg?style=for-the-badge&logo=npm)](https://www.npmjs.org/package/enzyme-intl)
 
 Enzyme helpers for fortifying tests that depend on react-intl by decoupling the need for actual translations. See: [react-intl documentation](https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl#helper-function-1)
 
