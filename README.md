@@ -43,3 +43,16 @@ import foo from '../foo';
 const result = foo(mockIntl);
 expect(result).toMatchSnapshot(); // OK, doesn't depend on real translations
 ```
+
+### Jest Mock
+
+In order to mock out calls to the `react-intl` api in Jest, you can import `jestMock` from `enzyme-intl` in your root `__mocks__` folder.
+
+```js
+// root-app-folder/__mocks__/react-intl.js
+const { jestMock } = require('react-intl');
+
+module.exports = jestMock;
+```
+
+See: [react-intl jest-mock documentation](https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl#jest-mock)
