@@ -31,9 +31,9 @@
     "@babel/preset-react": "^7.0.0"
   },
   "peerDependencies": {
-    "enzyme": "^3",
-    "react": "^16",
-    "react-intl": "^2.7"
+    "enzyme": "^3.0.0",
+    "react": "^16.0.0",
+    "react-intl": "^2.7.0"
   },
   "scripts": {
     "compile": "babel src --out-dir dist --copy-files",

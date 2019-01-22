@@ -46,13 +46,36 @@ expect(result).toMatchSnapshot(); // OK, doesn't depend on real translations
 
 ### Jest Mock
 
-In order to mock out calls to the `react-intl` api in Jest, you can import `jestMock` from `enzyme-intl` in your root `__mocks__` folder.
+In order to mock out calls to the `react-intl` api in Jest, you can copy the following into your root `__mocks__` folder.
 
 ```js
 // root-app-folder/__mocks__/react-intl.js
-const { jestMock } = require('react-intl');
+/**
+ * See: https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl#jest-mock
+ */
+import React from 'react';
 
-module.exports = jestMock;
+const mockIntl = {
+  defaultLocale: 'en',
+  formatDate: (date, options) => `${date}`,
+  formatHTMLMessage: ({ id }, options) => id,
+  formatMessage: () => ({ id }, options) => id,
+  formatNumber: (value, options) => `${value}`,
+  formatPlural: (value, options) => `${value}`,
+  formatTime: (value, options) => `${value}`,
+  formatRelative: (value, options) => `${value}`,
+  now: () => 0,
+};
+
+const Intl = require.requireActual('react-intl');
+
+Intl.injectIntl = (Node) => {
+  const renderWrapped = props => <Node {...props} intl={mockIntl} />;
+  renderWrapped.displayName = Node.displayName || Node.name || 'Component';
+  return renderWrapped;
+};
+
+module.exports = Intl;
 ```
 
 See: [react-intl jest-mock documentation](https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl#jest-mock)

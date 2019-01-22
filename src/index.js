@@ -1,5 +1,3 @@
-import jestMock from './jestMock';
-import mockIntl from './mockIntl';
 
-export { jestMock, mockIntl };
+export { default as mockIntl } from './mockIntl';
 export { mountWithIntl, renderWithIntl, shallowWithIntl } from './withIntl';
