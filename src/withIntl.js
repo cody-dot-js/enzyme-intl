@@ -27,3 +27,9 @@ export const renderWithIntl = (node, { context, childContextTypes, ...options } 
 export const shallowWithIntl = (node, { context, ...options } = {}) => (
   shallow(intlNode(node), { context: { ...context, intl }, ...options })
 );
+
+export default {
+  mountWithIntl,
+  renderWithIntl,
+  shallowWithIntl,
+};
