@@ -12,7 +12,7 @@ export const mockIntl = {
   defaultLocale: 'en',
   formatDate: (date, options) => `${date}`,
   formatHTMLMessage: ({ id }, options) => id,
-  formatMessage: () => ({ id }, options) => id,
+  formatMessage: ({ id }, options) => id,
   formatNumber: (value, options) => `${value}`,
   formatPlural: (value, options) => `${value}`,
   formatTime: (value, options) => `${value}`,
