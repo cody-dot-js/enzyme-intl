@@ -22,7 +22,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "files": [
-    "dist"
+    "dist",
+    "jestMock.js"
   ],
   "devDependencies": {
     "@babel/cli": "^7.2.3",
