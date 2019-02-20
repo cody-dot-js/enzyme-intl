@@ -10,7 +10,7 @@ import { mount, shallow, render } from 'enzyme';
 
 export const mockIntl = {
   defaultLocale: 'en',
-  formatDate: (date, options) => `${date}`,
+  formatDate: () => 'mock date',
   formatHTMLMessage: ({ id }, options) => id,
   formatMessage: ({ id }, options) => id,
   formatNumber: (value, options) => `${value}`,
